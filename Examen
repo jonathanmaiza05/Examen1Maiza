@@ -1,0 +1,137 @@
+from tkinter import*
+import turtle
+t=turtle.Pen()
+import math
+def atriangulo(b,h):
+    area=((b*h)/2)
+    return area
+def ptriangulo(la,lb,lc):
+    per=la+lb+lc
+    return per
+def acuadrado(la,lb,lc,ld):
+    area=la*lb*lc*ld
+    return area
+def pcuadrado(la,lb,lc,ld):
+    perc=la+lb+lc+ld
+    return perc
+def ppentagono(l):
+    ppentagono=5*l
+    return ppentagono
+def apentagono(l):
+    ap=(l/(2*(math.tan(36))))
+    area=((5*l*ap)/2)
+    return area
+def opcion1():
+        n=int(input('Ingrese que desea realizar'))
+        if n<3:
+            print('No se puede relizar esta acción')
+        if n==3 :
+            b=int(input('Ingrese la altura del triangulo'))
+            la=int(input('Ingrese valor l1'))
+            lb=int(input('Ingrese valor l2'))
+            lc=int(input('Ingrese valor l3 o (base)'))
+            print(ptriangulo(la,lb,lc))
+            print(atriangulo(b,lc))
+            t.forward(la)
+            t.left(150)
+            t.forward(lb)
+            t.left(150)
+            t.forward(lc)
+            t.left(150)
+        
+        if n==4 :
+            la=int(input('Ingrese valor l1'))
+            lb=int(input('Ingrese valor l2'))
+            lc=int(input('Ingrese valor l3'))
+            ld=int(input('Ingrese valor l4'))
+            print(acuadrado(la,lb,ld,lc))
+            print(pcuadrado(la,lb,lc,ld))
+            t.forward(la)
+            t.left(90)
+            t.forward(lb)
+            t.left(90)
+            t.forward(lc)
+            t.left(90)
+            t.forward(ld)
+            t.left(90)
+        if n==5:
+            la=int(input('Ingrese valor l1'))
+            print(apentagono(la))
+            print(ppentagono(la))
+            for p in range(1,6):
+                t.forward(la)
+                t.left(72)
+        if n>5:
+            print('No se puede relizar esta acción')
+
+
+root=Tk()
+root.title("calculadora")
+root.geometry("640x480")
+root.title('Examen1')
+#boton2 =Button(root, text="LLUVIA", lluvia())
+boton1 =Button(root, text="FIGURAS GEOMETRICAS",command=opcion1())
+boton1.pack()
+#boton2.pack()
+root.mainloop()
+turtle.getscreen()._root.mainloop()
+"""
+lluvia icncompleto
+from tkinter import *
+import random
+import time
+class Ball:
+    def __init__(self, canvas, color,a,b):
+        self.canvas = canvas
+        self.id = canvas.create_oval(20, 20, 30, 30, fill=color)
+        self.canvas.move(self.id, a,b)
+ 
+    def draw(self,x,y):
+        self.canvas.move(self.id, x,y)
+ 
+tk = Tk()
+tk.title("Game")
+tk.resizable(0, 0)
+tk.wm_attributes("-topmost", 1)
+canvas = Canvas(tk, width=640, height=480, bd=0, highlightthickness=0)
+canvas.pack()
+tk.update()
+ball = Ball(canvas, 'blue',0,0)
+ball2= Ball(canvas, 'blue',20,0)
+ball3 = Ball(canvas, 'blue',50,0)
+ball4= Ball(canvas, 'blue',80,0)
+ball5 = Ball(canvas, 'blue',110,0)
+ball6= Ball(canvas, 'blue',140,0)
+ball7 = Ball(canvas, 'blue',170,0)
+ball8= Ball(canvas, 'blue',200,0)
+ball9 = Ball(canvas, 'blue',230,0)
+ball10= Ball(canvas, 'blue',270,0)
+ball11 = Ball(canvas, 'blue',310,0)
+ball12= Ball(canvas, 'blue',340,0)
+ball13 = Ball(canvas, 'blue',370,0)
+ball14= Ball(canvas, 'blue',410,0)
+ball15 = Ball(canvas, 'blue',440,0)
+ball16= Ball(canvas, 'blue',470,0)
+
+while 1:
+    ball.draw(0,1)
+    ball2.draw(0,1)
+    ball3.draw(0,1)
+    ball4.draw(0,1)
+    ball5.draw(0,1)
+    ball6.draw(0,1)
+    ball7.draw(0,1)
+    ball8.draw(0,1)
+    ball9.draw(0,1)
+    ball10.draw(0,1)
+    ball11.draw(0,1)
+    ball12.draw(0,1)
+    ball13.draw(0,1)
+    ball14.draw(0,1)
+    ball15.draw(0,1)
+    ball16.draw(0,1)
+    tk.update_idletasks()
+    tk.update()
+    time.sleep(0.01)
+"""
+
